@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -79,7 +79,7 @@
             height: 35px;
             border-radius: 50%;
             object-fit: cover;
-            display: none;
+            display: block;
         }
         .link-text {
             flex-grow: 1;
@@ -105,28 +105,28 @@
             <ul class="link-list" id="link-list">
                 <li class="link-item">
                     <a href="https://www.quruanpu.cn/" target="_blank">
-                        <img id="icon1" class="link-icon" alt="icon">
+                        <img src="uploads/tubiao/tubiao1.png" class="link-icon" alt="icon">
                         <span class="link-text">知识 · 树洞</span>
                         <span class="link-arrow">></span>
                     </a>
                 </li>
-                  <li class="link-item">
-                    <a href="https://chatgpt.com/">
-                        <img id="icon3" class="link-icon" alt="icon">
+                <li class="link-item">
+                    <a href="https://chatgpt.com/" target="_blank">
+                        <img src="uploads/tubiao/tubiao8.png" class="link-icon" alt="icon">
                         <span class="link-text">ChatGPT官网</span>
                         <span class="link-arrow">></span>
                     </a>
                 </li>
                 <li class="link-item">
                     <a href="https://ahatai.chatgpt.day/" target="_blank">
-                        <img id="icon2" class="link-icon" alt="icon">
+                        <img src="uploads/tubiao/tubiao5.png" class="link-icon" alt="icon">
                         <span class="link-text">ChatGPT镜像</span>
                         <span class="link-arrow">></span>
                     </a>
                 </li>
                 <li class="link-item">
                     <a href="https://qm.qq.com/q/gJwCnVwuNU" target="_blank">
-                        <img id="icon7" class="link-icon" alt="icon">
+                        <img src="uploads/tubiao/tubiao7.png" class="link-icon" alt="icon">
                         <span class="link-text">加入交流群</span>
                         <span class="link-arrow">></span>
                     </a>
@@ -174,43 +174,9 @@
             });
         }
 
-        // 加载图标
-        function loadIcons() {
-            const iconFormats = ['png', 'jpg', 'jpeg', 'svg', 'ico'];
-            const iconIds = ['icon1', 'icon2', 'icon3', 'icon4', 'icon5', 'icon6', 'icon7', 'icon8'];
-
-            iconIds.forEach((iconId, index) => {
-                const iconBasePath = `uploads/tubiao/tubiao${index + 1}`;
-                let loaded = false;
-
-                const tryLoadIcon = (formatIndex) => {
-                    if (formatIndex >= iconFormats.length) return;
-                    const format = iconFormats[formatIndex];
-                    const img = document.getElementById(iconId);
-                    const iconPath = `${iconBasePath}.${format}`;
-
-                    img.src = iconPath;
-                    img.onload = () => {
-                        img.style.display = 'block';
-                        loaded = true;
-                        console.log(`Icon loaded from ${iconPath}`);
-                    };
-                    img.onerror = () => {
-                        console.log(`Failed to load icon from ${iconPath}`);
-                        if (!loaded) {
-                            tryLoadIcon(formatIndex + 1);
-                        }
-                    };
-                };
-
-                tryLoadIcon(0);
-            });
-        }
-
         // 初始化
         function initialize() {
             loadBackground();
-            loadIcons();
         }
 
         initialize();
