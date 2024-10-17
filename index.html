@@ -1,112 +1,112 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatGPT公益导航</title>
-    <!-- 添加 Favicon -->
+    <meta charset="UTF-8"> <!-- 设置字符编码为UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 设置响应式视图，使页面在不同设备上都能良好显示 -->
+    <title>ChatGPT公益导航</title> <!-- 网页标题 -->
+    <!-- 添加 Favicon 图标 -->
     <link rel="icon" href="logo.png" type="image/png">
     <style>
         /* 设置页面的全局样式 */
         body {
-            font-family: Arial, sans-serif;
-            color: #000;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background-color: #0d1117;
+            font-family: Arial, sans-serif; /* 设置字体为Arial，如果不可用则使用无衬线字体 */
+            color: #000; /* 设置文字颜色为黑色 */
+            text-align: center; /* 文字居中对齐 */
+            margin: 0; /* 设置外边距为0 */
+            padding: 0; /* 设置内边距为0 */
+            background-color: #0d1117; /* 设置背景颜色 */
         }
         .container {
-            padding: 20px;
-            max-width: 800px;
-            margin: 30px auto;
+            padding: 10px; /* 设置容器内边距 */
+            max-width: 1500px; /* 设置最大宽度为800像素 */
+            margin: 60px auto; /* 上下外边距(可调整上下位置)，左右自动居中 */
         }
         .content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            display: flex; /* 使用flex布局 */
+            flex-direction: column; /* 设置主轴方向为纵向 */
+            align-items: center; /* 所有子元素居中对齐 */
         }
         .logo {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 5px solid #fff;
-            object-fit: cover;
-            margin-top: 8px;
+            width: 90px; /* 设置logo宽度为100像素 */
+            height: 90px; /* 设置logo高度为100像素 */
+            border-radius: 50%; /* 设置圆角为50%，使其变成圆形 */
+            border: 5px solid #fff; /* 添加白色边框 */
+            object-fit: cover; /* 保持图片比例并裁剪 */
+            margin-top: 40px; /* 上边距为8像素 */
         }
-        h1 {
-            margin-bottom: 5px;
-            font-size: 24px;
-            color: #fff;
+        h2 {
+            margin-bottom: 5px; /* 下边距为5像素 */
+            font-size: 24px; /* 字体大小为24像素 */
+            color: #fff; /* 字体颜色为白色 */
         }
         .small-link {
-            font-size: 12px;
-            color: #fff;
-            text-decoration: none;
-            margin-bottom: 2px;
+            font-size: 12px; /* 字体大小为12像素 */
+            color: #fff; /* 字体颜色为白色 */
+            text-decoration: none; /* 去掉下划线 */
+            margin-bottom: 2px; /* 下边距为2像素 */
         }
         .small-link:hover {
-            text-decoration: underline;
+            text-decoration: underline; /* 悬停时添加下划线 */
         }
         .link-list {
-            list-style: none;
-            padding: 0;
-            width: 100%; /* 设置列表宽度为100% */
-            max-width: 600px; /* 设置最大宽度 */
+            list-style: none; /* 去掉列表样式 */
+            padding: 0; /* 去掉内边距 */
+            width: 100%; /* 列表宽度为100% */
+            max-width: 600px; /* 设置最大宽度为600像素 */
             margin: 0 auto; /* 居中 */
         }
         .link-item {
-            margin: 15px 0;
-            position: relative;
+            margin: 15px 0; /* 上下外边距为15像素 */
+            position: relative; /* 相对定位，为子元素提供绝对定位的参考 */
         }
         .link-item a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: rgb(51, 51, 51);
-            font-weight: bold;
-            letter-spacing: 0.1em;
-            background-color: #fff;
-            padding: 22px 16px;
-            border-radius: 30px;
-            font-size: 14px;
-            transition: background-color 0.3s;
-            position: relative;
+            display: flex; /* 使用flex布局 */
+            align-items: center; /* 子元素居中对齐 */
+            text-decoration: none; /* 去掉下划线 */
+            color: rgb(51, 51, 51); /* 字体颜色 */
+            font-weight: bold; /* 设置字体加粗 */
+            letter-spacing: 0.1em; /* 字母间距 */
+            background-color: #fff; /* 背景颜色为白色 */
+            padding: 22px 16px; /* 内边距，上下22像素，左右16像素 */
+            border-radius: 30px; /* 设置圆角 */
+            font-size: 14px; /* 字体大小为14像素 */
+            transition: background-color 0.3s; /* 背景颜色变化时的过渡效果 */
+            position: relative; /* 允许绝对定位的子元素相对于它定位 */
         }
         .link-item a:hover {
-            background-color: rgba(255, 255, 255, 0.85);
+            background-color: rgba(255, 255, 255, 0.85); /* 悬停时背景颜色稍微透明 */
         }
         .link-icon {
-            position: absolute;
-            left: 6px;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            object-fit: cover;
+            position: absolute; /* 绝对定位 */
+            left: 6px; /* 左边距6像素 */
+            width: 35px; /* 图标宽度35像素 */
+            height: 35px; /* 图标高度35像素 */
+            border-radius: 50%; /* 圆形图标 */
+            object-fit: cover; /* 保持比例并裁剪 */
             display: block; /* 图标显示 */
         }
         .link-text {
-            flex-grow: 1;
-            text-align: center;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+            flex-grow: 1; /* 使文本占据剩余空间 */
+            text-align: center; /* 文本居中对齐 */
+            position: absolute; /* 绝对定位 */
+            left: 50%; /* 左边距50% */
+            transform: translateX(-50%); /* 使文本水平居中 */
         }
         .link-arrow {
-            position: absolute;
-            right: 15px;
-            font-weight: bold;
-            color: #5f5c5c;
+            position: absolute; /* 绝对定位 */
+            right: 15px; /* 右边距15像素 */
+            font-weight: bold; /* 加粗字体 */
+            color: #5f5c5c; /* 字体颜色 */
         }
         /* 新增的友情链接样式 */
         .friend-link {
-            font-size: 12px;
-            color: #aaa;
-            text-decoration: none;
-            margin-top: 10px;
+            font-size: 12px; /* 字体大小为12像素 */
+            color: #aaa; /* 字体颜色 */
+            text-decoration: none; /* 去掉下划线 */
+            margin-top: 10px; /* 上边距为10像素 */
         }
         .friend-link:hover {
-            text-decoration: underline;
+            text-decoration: underline; /* 悬停时添加下划线 */
         }
 
         /* 响应式布局 */
@@ -122,7 +122,7 @@
                 font-size: 12px; /* 调整文本大小 */
             }
             .link-icon {
-                width: 30px;
+                width: 30px; /* 调整图标大小 */
                 height: 30px; /* 调整图标大小 */
             }
             .link-arrow {
@@ -134,15 +134,15 @@
 <body>
     <div class="container">
         <div class="content">
-            <img src="logo.png" alt="Logo" class="logo" id="site-logo">
-            <h1 id="site-name">ChatGPT公益导航</h1>
-            <a href="https://space.bilibili.com/519341297?spm_id_from=333.1007.0.0" class="small-link" id="link-description" target="_blank">→爱生活·爱分享·爱白嫖(,,･∀･)ﾉ゛</a>
-            <ul class="link-list" id="link-list">
-                <li class="link-item">
-                    <a href="https://www.quruanpu.cn/" target="_blank">
-                        <img id="icon1" class="link-icon" src="uploads/tubiao/tubiao1.png" alt="icon">
-                        <span class="link-text">知识 · 树洞</span>
-                        <span class="link-arrow">></span>
+            <img src="logo.png" alt="Logo" class="logo" id="site-logo"> <!-- 网站logo -->
+            <h2 id="site-name">ChatGPT公益导航</h2> <!-- 网站标题 -->
+            <a href="https://space.bilibili.com/519341297?spm_id_from=333.1007.0.0" class="small-link" id="link-description" target="_blank">→爱生活·爱分享·爱白嫖(,,･∀･)ﾉ゛</a> <!-- 描述链接 -->
+            <ul class="link-list" id="link-list"> <!-- 链接列表 -->
+                <li class="link-item"> <!-- 列表项 -->
+                    <a href="https://www.quruanpu.cn/" target="_blank"> <!-- 链接 -->
+                        <img id="icon1" class="link-icon" src="uploads/tubiao/tubiao1.png" alt="icon"> <!-- 图标 -->
+                        <span class="link-text">知识 · 树洞</span> <!-- 链接文本 -->
+                        <span class="link-arrow">></span> <!-- 链接箭头 -->
                     </a>
                 </li>
                 <li class="link-item">
@@ -166,70 +166,10 @@
                         <span class="link-arrow">></span>
                     </a>
                 </li>
+                
             </ul>
-            <!-- 新增友情链接部分 -->
-            <p class="friend-link">
-                 <a href="https://qm.qq.com/q/gJwCnVwuNU" target="_blank" class="small-link">加入QQ交流群</a>
-            </p>
+            <a href="https://qm.qq.com/q/gJwCnVwuNU" class="friend-link" id="friend-link" target="_blank">加入QQ交流群</a> <!-- 友情链接 -->
         </div>
     </div>
-
-    <script>
-        // 设置默认背景图片
-        function setDefaultBackground() {
-            document.body.style.backgroundColor = '#0d1117';
-            console.log('Default background color set.');
-        }
-
-        // 加载背景图片
-        function loadBackground() {
-            const backgroundPaths = [
-                'uploads/beijing/beijing.png',
-                'uploads/beijing/beijing.jpg',
-                'uploads/beijing/beijing.jpeg',
-                'uploads/beijing/beijing.gif'
-            ];
-
-            let loaded = false;
-
-            backgroundPaths.forEach(path => {
-                const img = new Image();
-                img.onload = () => {
-                    if (!loaded) {
-                        document.body.style.backgroundImage = `url(${img.src})`;
-                        document.body.style.backgroundSize = 'cover';
-                        document.body.style.backgroundRepeat = 'no-repeat';
-                        loaded = true;
-                        console.log(`Background image loaded from ${img.src}`);
-                    }
-                };
-                img.onerror = () => {
-                    console.log(`Failed to load background image from ${path}`);
-                    if (backgroundPaths.indexOf(path) === backgroundPaths.length - 1 && !loaded) {
-                        setDefaultBackground();
-                    }
-                };
-                img.src = path;
-            });
-        }
-
-        // 加载图标
-        function loadIcons() {
-            const iconIds = ['icon1', 'icon3', 'icon5', 'icon7'];
-
-            iconIds.forEach(iconId => {
-                const img = document.getElementById(iconId);
-                img.style.display = 'block';
-            });
-        }
-
-        // 初始化
-        function initialize() {
-            loadBackground();
-            loadIcons();
-        }
-
-        initialize();
-    </script>
 </body>
 </html>
