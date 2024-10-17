@@ -51,7 +51,9 @@
         .link-list {
             list-style: none;
             padding: 0;
-            width: 60%;
+            width: 100%; /* 设置列表宽度为100% */
+            max-width: 600px; /* 设置最大宽度 */
+            margin: 0 auto; /* 居中 */
         }
         .link-item {
             margin: 15px 0;
@@ -105,6 +107,27 @@
         }
         .friend-link:hover {
             text-decoration: underline;
+        }
+
+        /* 响应式布局 */
+        @media screen and (max-width: 600px) {
+            .link-list {
+                width: 90%; /* 在小屏幕上将列表宽度设为90% */
+                margin: 0 auto; /* 保证列表居中 */
+            }
+            .link-item a {
+                padding: 18px 12px; /* 调整移动设备上的内边距 */
+            }
+            .link-text {
+                font-size: 12px; /* 调整文本大小 */
+            }
+            .link-icon {
+                width: 30px;
+                height: 30px; /* 调整图标大小 */
+            }
+            .link-arrow {
+                font-size: 12px; /* 调整箭头大小 */
+            }
         }
     </style>
 </head>
