@@ -1,148 +1,159 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatGPT公益导航</title>
-    <!-- 添加 Favicon -->
-    <link rel="icon" href="logo.png" type="image/png">
+    <meta charset="UTF-8"> <!-- 设置网页的字符编码为UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 让页面自适应不同设备 -->
+    <title>ChatGPT公益导航</title> <!-- 网页标题 -->
+    
+    <!-- 添加 Favicon 图标 -->
+    <link rel="icon" href="logo.png" type="image/png"> <!-- 设置网页标签上的图标 -->
+
     <style>
         /* 设置页面的全局样式 */
         body {
-            font-family: Arial, sans-serif;
-            color: #000;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background-color: #0d1117;
+            font-family: Arial, sans-serif; /* 页面字体 */
+            color: #000; /* 字体颜色 */
+            text-align: center; /* 文本居中 */
+            margin: 0; /* 移除默认外边距 */
+            padding: 0; /* 移除默认内边距 */
+            background-color: #0d1117; /* 背景颜色 */
         }
+        
+        /* 设置整体容器样式 */
         .container {
-            padding: 20px;
-            max-width: 800px;
-            margin: 30px auto;
+            padding: 20px; /* 内边距 */
+            max-width: 800px; /* 最大宽度 */
+            margin: 30px auto; /* 设置自动水平居中，顶部留出30px空隙 */
+            padding-top: 100px; /* 新增：顶部增加100px距离，将内容整体下移 */
         }
+        
+        /* 内容块样式 */
         .content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            display: flex; /* 使用弹性盒布局 */
+            flex-direction: column; /* 内容纵向排列 */
+            align-items: center; /* 子元素水平居中 */
         }
+        
+        /* 设置 logo 图片的样式 */
         .logo {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 5px solid #fff;
-            object-fit: cover;
-            margin-top: 8px;
+            width: 100px; /* 宽度 */
+            height: 100px; /* 高度 */
+            border-radius: 50%; /* 圆形图片 */
+            border: 5px solid #fff; /* 图片边框 */
+            object-fit: cover; /* 保持图片比例 */
+            margin-top: 8px; /* 上方增加一点距离 */
         }
+        
+        /* 标题样式 */
         h1 {
-            margin-bottom: 5px;
-            font-size: 24px;
-            color: #fff;
+            margin-bottom: 5px; /* 标题底部留出5px空隙 */
+            font-size: 24px; /* 字体大小 */
+            color: #fff; /* 字体颜色 */
         }
+        
+        /* 小链接的样式 */
         .small-link {
-            font-size: 12px;
-            color: #fff;
-            text-decoration: none;
-            margin-bottom: 2px;
+            font-size: 12px; /* 字体大小 */
+            color: #fff; /* 字体颜色 */
+            text-decoration: none; /* 去掉下划线 */
+            margin-bottom: 2px; /* 底部留出2px空隙 */
         }
+        
+        /* 鼠标悬停时链接样式 */
         .small-link:hover {
-            text-decoration: underline;
-        }
-        .link-list {
-            list-style: none;
-            padding: 0;
-            width: 100%; /* 设置列表宽度为100% */
-            max-width: 600px; /* 设置最大宽度 */
-            margin: 0 auto; /* 居中 */
-        }
-        .link-item {
-            margin: 15px 0;
-            position: relative;
-        }
-        .link-item a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: rgb(51, 51, 51);
-            font-weight: bold;
-            letter-spacing: 0.1em;
-            background-color: #fff;
-            padding: 22px 16px;
-            border-radius: 30px;
-            font-size: 14px;
-            transition: background-color 0.3s;
-            position: relative;
-        }
-        .link-item a:hover {
-            background-color: rgba(255, 255, 255, 0.85);
-        }
-        .link-icon {
-            position: absolute;
-            left: 6px;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            object-fit: cover;
-            display: block; /* 图标显示 */
-        }
-        .link-text {
-            flex-grow: 1;
-            text-align: center;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        .link-arrow {
-            position: absolute;
-            right: 15px;
-            font-weight: bold;
-            color: #5f5c5c;
-        }
-        /* 新增的友情链接样式 */
-        .friend-link {
-            font-size: 12px;
-            color: #aaa;
-            text-decoration: none;
-            margin-top: 10px;
-        }
-        .friend-link:hover {
-            text-decoration: underline;
+            text-decoration: underline; /* 悬停时显示下划线 */
         }
 
-        /* 响应式布局 */
-        @media screen and (max-width: 600px) {
-            .link-list {
-                width: 90%; /* 在小屏幕上将列表宽度设为90% */
-                margin: 0 auto; /* 保证列表居中 */
-            }
-            .link-item a {
-                padding: 18px 12px; /* 调整移动设备上的内边距 */
-            }
-            .link-text {
-                font-size: 12px; /* 调整文本大小 */
-            }
-            .link-icon {
-                width: 30px;
-                height: 30px; /* 调整图标大小 */
-            }
-            .link-arrow {
-                font-size: 12px; /* 调整箭头大小 */
-            }
+        /* 列表样式 */
+        .link-list {
+            list-style: none; /* 去掉默认的列表样式 */
+            padding: 0; /* 去掉内边距 */
+            width: 60%; /* 列表宽度 */
+        }
+
+        /* 列表项样式 */
+        .link-item {
+            margin: 15px 0; /* 列表项上下空隙 */
+            position: relative; /* 相对定位 */
+        }
+
+        /* 列表项中的链接样式 */
+        .link-item a {
+            display: flex; /* 弹性布局 */
+            align-items: center; /* 垂直居中 */
+            text-decoration: none; /* 去掉下划线 */
+            color: rgb(51, 51, 51); /* 链接字体颜色 */
+            font-weight: bold; /* 粗体 */
+            letter-spacing: 0.1em; /* 字符间距 */
+            background-color: #fff; /* 背景颜色 */
+            padding: 22px 16px; /* 内边距 */
+            border-radius: 30px; /* 圆角边框 */
+            font-size: 14px; /* 字体大小 */
+            transition: background-color 0.3s; /* 背景色过渡效果 */
+            position: relative; /* 相对定位 */
+        }
+
+        /* 悬停时列表项背景色变化 */
+        .link-item a:hover {
+            background-color: rgba(255, 255, 255, 0.85); /* 背景色半透明 */
+        }
+
+        /* 列表项图标样式 */
+        .link-icon {
+            position: absolute; /* 绝对定位 */
+            left: 6px; /* 向左移动6px */
+            width: 35px; /* 图标宽度 */
+            height: 35px; /* 图标高度 */
+            border-radius: 50%; /* 圆形图标 */
+            object-fit: cover; /* 保持图标比例 */
+            display: block; /* 显示图标 */
+        }
+
+        /* 列表项中文本样式 */
+        .link-text {
+            flex-grow: 1; /* 占据剩余空间 */
+            text-align: center; /* 文本居中 */
+            position: absolute; /* 绝对定位 */
+            left: 50%; /* 向左50% */
+            transform: translateX(-50%); /* X轴居中 */
+        }
+
+        /* 列表箭头样式 */
+        .link-arrow {
+            position: absolute; /* 绝对定位 */
+            right: 15px; /* 向右移动15px */
+            font-weight: bold; /* 粗体 */
+            color: #5f5c5c; /* 颜色 */
+        }
+
+        /* 友情链接样式 */
+        .friend-link {
+            font-size: 12px; /* 字体大小 */
+            color: #aaa; /* 字体颜色 */
+            text-decoration: none; /* 去掉下划线 */
+            margin-top: 10px; /* 顶部留出10px空隙 */
+        }
+
+        /* 鼠标悬停时友情链接样式 */
+        .friend-link:hover {
+            text-decoration: underline; /* 悬停时显示下划线 */
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="content">
-            <img src="logo.png" alt="Logo" class="logo" id="site-logo">
-            <h1 id="site-name">ChatGPT公益导航</h1>
-            <a href="https://space.bilibili.com/519341297?spm_id_from=333.1007.0.0" class="small-link" id="link-description" target="_blank">→爱生活·爱分享·爱白嫖(,,･∀･)ﾉ゛</a>
+    <div class="container"> <!-- 包含整个页面内容的容器 -->
+        <div class="content"> <!-- 包含主要内容的容器 -->
+            <img src="logo.png" alt="Logo" class="logo" id="site-logo"> <!-- 网站的logo图片 -->
+            <h1 id="site-name">ChatGPT公益导航</h1> <!-- 网站标题 -->
+            <a href="https://space.bilibili.com/519341297?spm_id_from=333.1007.0.0" class="small-link" id="link-description" target="_blank">→爱生活·爱分享·爱白嫖(,,･∀･)ﾉ゛</a> <!-- 小链接，带有描述 -->
+            
+            <!-- 链接列表 -->
             <ul class="link-list" id="link-list">
-                <li class="link-item">
+                <li class="link-item"> <!-- 每一个列表项 -->
                     <a href="https://www.quruanpu.cn/" target="_blank">
-                        <img id="icon1" class="link-icon" src="uploads/tubiao/tubiao1.png" alt="icon">
-                        <span class="link-text">知识 · 树洞</span>
-                        <span class="link-arrow">></span>
+                        <img id="icon1" class="link-icon" src="uploads/tubiao/tubiao1.png" alt="icon"> <!-- 链接图标 -->
+                        <span class="link-text">知识 · 树洞</span> <!-- 链接文字 -->
+                        <span class="link-arrow">></span> <!-- 链接箭头 -->
                     </a>
                 </li>
                 <li class="link-item">
@@ -167,6 +178,7 @@
                     </a>
                 </li>
             </ul>
+
             <!-- 新增友情链接部分 -->
             <p class="friend-link">
                  <a href="https://qm.qq.com/q/gJwCnVwuNU" target="_blank" class="small-link">加入QQ交流群</a>
@@ -177,59 +189,12 @@
     <script>
         // 设置默认背景图片
         function setDefaultBackground() {
-            document.body.style.backgroundColor = '#0d1117';
-            console.log('Default background color set.');
+            document.body.style.backgroundColor
+            = "#0d1117"; // 设置页面默认背景颜色为深灰色
         }
 
-        // 加载背景图片
-        function loadBackground() {
-            const backgroundPaths = [
-                'uploads/beijing/beijing.png',
-                'uploads/beijing/beijing.jpg',
-                'uploads/beijing/beijing.jpeg',
-                'uploads/beijing/beijing.gif'
-            ];
-
-            let loaded = false;
-
-            backgroundPaths.forEach(path => {
-                const img = new Image();
-                img.onload = () => {
-                    if (!loaded) {
-                        document.body.style.backgroundImage = `url(${img.src})`;
-                        document.body.style.backgroundSize = 'cover';
-                        document.body.style.backgroundRepeat = 'no-repeat';
-                        loaded = true;
-                        console.log(`Background image loaded from ${img.src}`);
-                    }
-                };
-                img.onerror = () => {
-                    console.log(`Failed to load background image from ${path}`);
-                    if (backgroundPaths.indexOf(path) === backgroundPaths.length - 1 && !loaded) {
-                        setDefaultBackground();
-                    }
-                };
-                img.src = path;
-            });
-        }
-
-        // 加载图标
-        function loadIcons() {
-            const iconIds = ['icon1', 'icon3', 'icon5', 'icon7'];
-
-            iconIds.forEach(iconId => {
-                const img = document.getElementById(iconId);
-                img.style.display = 'block';
-            });
-        }
-
-        // 初始化
-        function initialize() {
-            loadBackground();
-            loadIcons();
-        }
-
-        initialize();
+        // 等页面加载完成后调用设置背景颜色的函数
+        window.onload = setDefaultBackground;
     </script>
 </body>
 </html>
